@@ -42,7 +42,7 @@ In an online community platform, users often engage in discussions across a wide
 
 
 
-**Solution**
+**Solution :**
 The proposed solution involves implementing a pipeline that combines text preprocessing techniques, including tokenization, lemmatization, and stop word removal, with a machine learning classifier. The selected classifier, `Logistic regression`, `Naive Bayes`, `Random Forest`, is trained on a labeled dataset containing posts from both the "Basketball" and "Football" subreddits. The trained model is then capable of predicting the topic of new, unseen posts with a high degree of accuracy.
 
 
