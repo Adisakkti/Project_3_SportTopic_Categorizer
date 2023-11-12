@@ -49,6 +49,8 @@ The proposed solution involves implementing a pipeline that combines text prepro
 
 **Conclusions:**
 
+![alt text](Pictures/modelevaluation.png)
+
 The developed text classification model demonstrates strong performance in accurately categorizing posts into the "Basketball" and "Football" topics. Key features such as `selftext` , `title` were found to significantly influence classification outcomes. The model showcases `Naive Bayes` with `Countvectorizer` performance is highest Accuracy.
 
 The best hyperparameters for this model are 
@@ -60,8 +62,9 @@ The best hyperparameters for this model are
    - nb__fit_prior : True
 
 
-
 **Recommendations:**
+
+
 1. Use features 'Selftext' and 'Title' with the Naive Bayes model and CountVectorizer to achieve the highest F1-score for categorizing posts into the football and basketball categories. 
 2. Continuously monitor and update the model with new data to maintain its accuracy and relevance.
 3. Explore the possibility of incorporating additional features or contextual information to further enhance classification accuracy.
