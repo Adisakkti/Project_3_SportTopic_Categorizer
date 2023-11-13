@@ -25,15 +25,13 @@
 ![alt text](Pictures/distribution.png)
 
 
-
-
 **Objective:**
 1. Build a robust text classification model capable of accurately predicting the topic of a post as either basketball or football.
 2. Identify key features and characteristics within the text data that contribute to accurate classification.
 3. Evaluate the model's performance on a comprehensive test set to ensure generalization.
 
 ## Problem Statement
-In an online community platform, users often engage in discussions across a wide range of topics. However, with an increasing volume of content, it becomes challenging for users to navigate and find posts that align with their specific interests. To address this issue, we aim to develop a text classification model that can accurately categorize posts into one of two categories: "Basketball" and "Football". 
+In an online community platform, users often engage in discussions across a wide range of topics. However, with an increasing volume of content, it becomes challenging for users to navigate and find posts that align with their specific interests. To address this issue, we aim to develop a text classification model that can accurately categorize posts into one of two categories: "Basketball" and "Football" 
 
 **Questions:**  
 1. How can we effectively differentiate between posts related to basketball and football?
@@ -43,13 +41,13 @@ In an online community platform, users often engage in discussions across a wide
 
 
 **Solution :**
-The proposed solution involves implementing a pipeline that combines text preprocessing techniques, including tokenization, lemmatization, and stop word removal, with a machine learning classifier. The selected classifier, `Logistic regression`, `Naive Bayes`, `Random Forest`, is trained on a labeled dataset containing posts from both the "Basketball" and "Football" subreddits. The trained model is then capable of predicting the topic of new, unseen posts with a high degree of accuracy.
+The proposed solution involves implementing a pipeline that combines text preprocessing techniques, including tokenization, lemmatization, and stop word removal, with a machine learning classifier. The selected classifier, `Logistic regression`, `Naive Bayes`, `Random Forest`, is trained on a labeled dataset containing posts from both the "Basketball" and "Football" posts. The trained model is then capable of predicting the topic of new, unseen posts with a high degree of accuracy.
 
 
 
 **Conclusions:**
 
-![alt text](Pictures/modelevaluation.png)
+![alt text](Pictures/score.png)
 
 The developed text classification model demonstrates strong performance in accurately categorizing posts into the "Basketball" and "Football" topics. Key features such as `selftext` , `title` were found to significantly influence classification outcomes. The model showcases `Naive Bayes` with `Countvectorizer` performance is highest Accuracy.
 
@@ -65,7 +63,7 @@ The best hyperparameters for this model are
 **Recommendations:**
 
 
-1. Use features 'Selftext' and 'Title' with the Naive Bayes model and CountVectorizer to achieve the highest F1-score for categorizing posts into the football and basketball categories. 
+1. Use features `Selftext` and `Title` with the `Naive Bayes` model and `CountVectorizer` to achieve the highest F1-score and Accuracy score for categorizing posts into the football and basketball categories. 
 2. Continuously monitor and update the model with new data to maintain its accuracy and relevance.
 3. Explore the possibility of incorporating additional features or contextual information to further enhance classification accuracy.
 4. Consider integrating user feedback mechanisms to iteratively improve the model based on community preferences.
@@ -77,3 +75,6 @@ The best hyperparameters for this model are
 2. **Improved Community Engagement:** By accurately categorizing posts, users are more likely to participate in discussions, leading to increased interaction and a more vibrant community.
 3. **Time and Resource Efficiency:** Automating the categorization process reduces the need for manual sorting and tagging of posts, saving both time and human resources.
 4. **Data-Driven Insights:** The model can provide valuable insights into user preferences and popular topics, which can inform content curation and community management strategies.
+
+**Limitations**
+1.The limitation in collecting data from the subreddit is that I attempted to gather information from a total of 3,000, 7,000, and 14,000 posts, but it seems that after removing duplicated data, only around 600 posts remain.
