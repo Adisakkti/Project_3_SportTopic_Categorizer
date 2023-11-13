@@ -9,6 +9,33 @@
 | **title** | Basketball.csv, Football.csv | Title of the post |
 | **selftext**  | Basketball.csv, Football.csv | The content of that post       |
 
+
+As a newly launched sports community website call **"Sport today** , we have seen a rapid influx of users who are enthusiastic about discussing various sports topics. However, with the increasing diversity of posts, we've noticed that the majority of our users are avid fans of football and basketball. This diversity has led us to the realization that we need a tool to effectively categorize posts based on the type of sports discussed.
+
+To address this, let's imagine our platform as a space where sports enthusiasts gather to engage in discussions. Given that a significant portion of our user base is interested in both football and basketball, we aim to create a tool that can intelligently categorize posts into these specific sports categories. Observing similarities in text patterns with platforms like Reddit, we've decided to leverage Reddit's rich source of labeled data for training our model.
+
+Our goal is to extract relevant data from Reddit, utilizing its vast repository of information. The pre-labeled data from Reddit will serve as the foundation for training our model to accurately categorize posts into football and basketball topics. This project stems from the need to enhance the user experience on our platform by offering a tailored and organized space for discussions on football and basketball.
+
+By implementing this text classification model, we aspire to create a seamless and user-friendly environment for our sports community, ensuring that users can easily find and participate in discussions related to their favorite sports. This project is an exciting step towards providing a personalized and engaging experience for sports enthusiasts on our platform.
+
+**Objective:**
+1. Build a robust text classification model capable of accurately predicting the topic of a post as either basketball or football.
+2. Identify key features and characteristics within the text data that contribute to accurate classification.
+3. Evaluate the model's performance on a comprehensive test set to ensure generalization.
+
+## Problem Statement
+In an online community platform, users often engage in discussions across a wide range of sport topics. However, with an increasing volume of content, it becomes challenging for users to navigate and find posts that align with their specific interests. To address this issue, we aim to develop a text classification model that can accurately categorize posts of two categories: "Basketball" and "Football" 
+
+**Questions:**  
+1. How can we effectively differentiate between posts related to basketball and football?
+2. What features of the text data are most influential in making accurate classifications?
+3. How can we ensure the model performs reliably on unseen posts?
+
+
+**Solution :**
+The proposed solution involves implementing a pipeline that combines text preprocessing techniques, including tokenization, lemmatization, and stop word removal, with a machine learning classifier. The selected classifier, `Logistic regression`, `Naive Bayes`, `Random Forest`, is trained on a labeled dataset containing posts from both the "Basketball" and "Football" posts. The trained model is then capable of predicting the topic of new, unseen posts with a high degree of accuracy.
+
+
 **Exploratory Data Analysis And Cleaning Data**
 1. Collecting data  
     - Basketball.csv ( 7441 rows , 114 columns ) 
@@ -21,31 +48,12 @@
     - 0 : Basketball 
     - 1 : Football
 
+
 **Cleaned data after drop null values , drop duplicate**
 ![alt text](Pictures/distribution.png)
 
 
-**Objective:**
-1. Build a robust text classification model capable of accurately predicting the topic of a post as either basketball or football.
-2. Identify key features and characteristics within the text data that contribute to accurate classification.
-3. Evaluate the model's performance on a comprehensive test set to ensure generalization.
-
-## Problem Statement
-In an online community platform, users often engage in discussions across a wide range of topics. However, with an increasing volume of content, it becomes challenging for users to navigate and find posts that align with their specific interests. To address this issue, we aim to develop a text classification model that can accurately categorize posts into one of two categories: "Basketball" and "Football" 
-
-**Questions:**  
-1. How can we effectively differentiate between posts related to basketball and football?
-2. What features of the text data are most influential in making accurate classifications?
-3. How can we ensure the model performs reliably on new, unseen posts?
-
-
-
-**Solution :**
-The proposed solution involves implementing a pipeline that combines text preprocessing techniques, including tokenization, lemmatization, and stop word removal, with a machine learning classifier. The selected classifier, `Logistic regression`, `Naive Bayes`, `Random Forest`, is trained on a labeled dataset containing posts from both the "Basketball" and "Football" posts. The trained model is then capable of predicting the topic of new, unseen posts with a high degree of accuracy.
-
-
-
-**Conclusions:**
+## Conclusion and Recommendation
 
 ![alt text](Pictures/score.png)
 
@@ -60,13 +68,26 @@ The best hyperparameters for this model are
    - nb__fit_prior : True
 
 
-**Recommendations:**
+In evaluating the effectiveness of utilizing the `Title+Selftext` features, we observed that this combination produced the most promising results. The `Naive Bayes model`, coupled with `CountVectorizer`, demonstrated outstanding performance, achieving an impressive `F1-score` of 0.94 on the training set and 0.91 on the unseen dataset . Additionally, the `Accuracy score` was 0.94 on the training set and 0.91 on the unseen dataset which is highly satisfactory
+
+To further interpret the model's decisions, we identified specific keywords that strongly contribute to the classification of posts into football and basketball categories:
+
+- For Football-related posts:
+  - 'world cup'
+  - 'champion league'
+  - 'ballon d'or'
+  - 'real madrid'
+  - 'premier league'
+
+- For Basketball-related posts:
+  - 'high school'
+  - 'pickup game'
+  - 'shooting guard'
+  - 'nba team'
+  - 'offensive player'
 
 
-1. Use features `Selftext` and `Title` with the `Naive Bayes` model and `CountVectorizer` to achieve the highest F1-score and Accuracy score for categorizing posts into the football and basketball categories. 
-2. Continuously monitor and update the model with new data to maintain its accuracy and relevance.
-3. Explore the possibility of incorporating additional features or contextual information to further enhance classification accuracy.
-4. Consider integrating user feedback mechanisms to iteratively improve the model based on community preferences.
+We recommend continuous monitoring of the model's performance through the implementation of a robust monitoring system. This proactive approach allows for the timely identification of any shifts in data distribution or potential performance degradation. Such monitoring is crucial to ensure the model remains effective and adaptive in the dynamic environment of the online community platform and If the categorization of football and basketball proves to be well-received, we can extend our capabilities to classify other sports. However, currently, the majority of users show the highest enthusiasm for basketball and football
 
 
 **Impact:**
